@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-domob" version="0.0.1">
+  <name>Domob Ads</name>
+
+  <dependency id="cordova-plugin-admobpro"/>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <header-file src="src/ios/DMAdView.h" />
+    <header-file src="src/ios/DMFeedsAdView.h" />
+    <header-file src="src/ios/DMInterstitialAdController.h" />
+    <header-file src="src/ios/DMRTSplashAdController.h" />
+    <header-file src="src/ios/DMSplashAdController.h" />
+    <header-file src="src/ios/DMTools.h" />
+    <source-file src="src/ios/libDomobAdSDK.a" framework="true" />
+    <resource-file src="src/ios/DomobAdSDKBundle/DomobAdSDKBundle.bundle" />
+
+    <framework src="Foundation.framework" />
+    <framework src="UIKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreLocation.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="PassKit.framework" />
+    <framework src="AdSupport.framework" />
+    <framework src="Social.framework" />
+  </platform>
+
+  <!-- Android -->
+  <platform name="android">
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent"></activity>
+    </config-file>
+    
+    <config-file parent="/*" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    </config-file>
+    <source-file src="src/android/domob_android_sdk.jar" target-dir="libs"/>
+  </platform>
+</plugin>

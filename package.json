@@ -1,0 +1,21 @@
+{
+  "name": "cordova-plugin-domob",
+  "version": "0.0.1",
+  "description": "Cordova Plugin for Domob Ads to monetize hybrid apps.",
+  "cordova": {
+    "id": "cordova-plugin-domob",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "admob",
+    "ad"
+  ],
+  "author": "Derek Hsu",
+  "license": "MIT"
+}
